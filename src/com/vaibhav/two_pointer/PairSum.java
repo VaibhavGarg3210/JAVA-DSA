@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * @author vaibhav
  * @strategy - Two Pointer(invard)
  * @problem - Pair Sum
  * @desc - array + assending order(sorted) + target value
@@ -31,8 +32,9 @@ public class PairSum {
 	public  static ArrayList<Integer> twoPointerInward(List<Integer> arr, Integer target) {
 		System.err.println("Two Pointer Inward");
 		int i=0;
-		int j = arr.size();
+		int j = arr.size()-1;
 		while(i<j) {
+			System.err.println(arr.get(i)+"-"+arr.get(j));
 			if(arr.get(i)+arr.get(j)==target) {
 				ArrayList<Integer> result = new ArrayList<>();
 				result.add(arr.get(i));
@@ -50,10 +52,10 @@ public class PairSum {
 	}
 
 	public static void main(String[] args) {
-		List<Integer> sortedArray = Arrays.asList(-5, 12, 3, 4, 6);
+		List<Integer> sortedArray = Arrays.asList(-5, 3, 4, 6, 12);
 		Integer target = 7;
 		System.err.println(bruitfulCode(sortedArray, target));
-		System.err.println(bruitfulCode(sortedArray, target));
+		System.err.println(twoPointerInward(sortedArray, target));
 
 	}
 }

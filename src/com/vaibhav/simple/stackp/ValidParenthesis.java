@@ -13,10 +13,11 @@ public class ValidParenthesis {
 
 	public static void main(String args[]) {
 		String s = "([]{})";
-		System.out.println(isValid(s));
+		String s1 = "[";
+		System.out.println(isValids(s1));
 	}
 
-	private static boolean isValid(String s) {
+	private static boolean isValids(String s) {
 		Map<Character, Character> map = new HashMap<Character, Character>();
 		Stack<Character> stack = new Stack<>();
 		map.put('(', ')');
@@ -37,5 +38,24 @@ public class ValidParenthesis {
 
 		return stack.isEmpty();
 	}
+//	public static boolean isValid(String s) {
+//        Map<Character,Character> parenthesisMap = new HashMap<Character,Character>();
+//        parenthesisMap.put('(',')');
+//        parenthesisMap.put('[',']');
+//        parenthesisMap.put('{','}');
+//        Stack<Character> storeStack = new Stack<>();
+//        for(Character c : s.toCharArray()){
+//            if(parenthesisMap.containsKey(c)){
+//                storeStack.add(c);
+//            }else{
+//                if(!storeStack.isEmpty() && parenthesisMap.get(storeStack.peek())==c){
+//                    storeStack.pop();
+//                }else{
+//                    return false;
+//                }
+//            }
+//        }
+//        return storeStack.isEmpty();
+//    }
 
 }
